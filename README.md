@@ -2,9 +2,9 @@
 
 ## Demo
 
-[**click live demo of the project**](https://dominiksiejka.github.io/ToDoListApp)
+[**click live demo of the project**](https://dominiksiejka.github.io/ToDoList/)
 
-![CounterApp preview](./assets/todolist.jpg)
+![ToDoListApp preview](./assets/todolist.jpg)
 
 ## Table of Contents
 
@@ -35,7 +35,7 @@ To add a single task in the input field write the text content and then press en
 with BASH
 
 # clone the remote repo to your local one
-$ git clone https://github.com/dominiksiejka/CounterApp.git
+$ git clone https://github.com/dominiksiejka/ToDoList.git
 
 # open the index.html file or use your code editor to open it with live server
 
@@ -48,4 +48,4 @@ $ git clone https://github.com/dominiksiejka/CounterApp.git
 
 ## License
 
-- MIT © [Dominik Siejka ](https://github.com/dominiksiejka/ToDoListApp)
+- MIT © [Dominik Siejka ](https://github.com/dominiksiejka/ToDoList)
