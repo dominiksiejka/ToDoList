@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="keywords" content="todolist taskList" />
+    <title>ToDoList</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="project.js" defer></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <button id="change-engine" title="Change between adding and searching">
+        <i class="fas fa-exchange-alt"></i>
+      </button>
+      <div class="add-task-engine">
+        <h1>
+          <span id="first">To</span><span id="second">Do</span
+          ><span id="third">List</span>
+        </h1>
+        <input
+          id="new-task"
+          type="text"
+          placeholder="add new task..."
+          maxlength="50"
+          spellcheck="false"
+        />
+        <button id="add-task">Add</button>
+      </div>
+      <div class="search-engine">
+        <h1>
+          <span id="first">Search</span><span id="second">Ta</span
+          ><span id="third">sk</span>
+        </h1>
+        <input
+          id="search-task"
+          type="text"
+          placeholder="search task..."
+          maxlength="50"
+        />
+      </div>
+      <nav class="task-list">
+        <button class="trash" title="remove all">
+          <i class="fas fa-trash"></i>
+        </button>
+        <button class="changelog" title="changelog">
+          <i class="fas fa-clipboard-list"></i>
+        </button>
+        <h3>My tasks to do:</h3>
+        <ul></ul>
+      </nav>
+      <div class="modal"></div>
+      <div class="remove-approval">
+        <p id="message"></p>
+        <div class="options">
+          <button>Submit</button>
+          <button>Cancel</button>
+        </div>
+      </div>
+      <div id="edit-task">
+        <header>
+          <button><i class="fas fa-times"></i></button>
+          <h2>Edit task</h2>
+        </header>
+        <p></p>
+        <input
+          type="text"
+          placeholder="Type in new text content..."
+          maxlength="40"
+        />
+        <button class="change-task-approval">Submit change</button>
+      </div>
+      <div id="no-tasks-message">
+        <p>Please add some tasks first and then try to find them</p>
+      </div>
+      <div id="changelog-page">
+        <button><i class="fas fa-times"></i></button>
+        <h3>Tasks Changelog</h3>
+        <div class="task-changes">
+          <div class="loading-message">
+            <svg width="30" height="30">
+              <circle
+                cx="15"
+                cy="15"
+                r="9"
+                fill="transparent"
+                stroke-width="5"
+                stroke="aqua"
+                stroke-dasharray="20"
+              />
+            </svg>
+            <p>The tasks log will show in seconds</p>
+          </div>
+        </div>
+      </div>
+      <div class="stats-info">
+        <h3>Stats info:</h3>
+        <p>Tasks number: <span class="tasks-total">0</span></p>
+        <p>Date: <span class="current-date">1992.11.23</span></p>
+        <p>Time: <span class="current-time">10</span></p>
+      </div>
+    </main>
+  </body>
+</html>
