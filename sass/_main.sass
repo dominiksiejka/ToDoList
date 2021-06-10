@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Oswald:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import './mixins'
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    background-image: radial-gradient(circle, rgba(238,174,202,1) 1%, rgba(39,104,198,1) 92%)
+    display: flex
+    justify-content: center
+
+main.container 
+    margin-top: 100px
+    flex-basis: 50%
+    min-height: 55vh
+    border-radius: 15px
+    display: flex
+    flex-direction: column
+    @media screen and ( max-width: 750px)
+        flex-basis: 90%
+        margin-top: 300px
+    @media screen and ( min-width: 750px)
+        margin-top: 150px
+   
+        
+        
+   
+        
+    #change-engine
+            position: absolute
+            top: 3%
+            right: 5%
+            font-size: 20px
+            padding: 3px 20px
+            outline: none
+            text-transform: uppercase
+            font-size: 20px
+            letter-spacing: 1.3px
+            cursor: pointer
+            border: none
+            box-shadow: 0 0 2px 2px white
+            &:hover
+                border-radius: 10px
+                background-color: black
+                color: white
+                box-shadow: 0 0 2px 2px black
+    .add-task-engine, .search-engine
+        background-color: rgba(0,0,0,0.3)
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        border-radius: 15px 15px 0 0
+        align-items: center
+        flex-basis: 170px 
+        h1 
+            font-family: 'Oswald', sans-serif
+            letter-spacing: 1.3px
+            font-size: 38px
+        input
+            font-family: 'Caveat', cursive;
+            padding: 2px 8px
+            outline: none
+            font-size: 24px
+            border: none
+            border-top: 2px solid darkred
+            border-bottom: 2px solid darkred
+            border-radius: 12px
+            text-align: center
+            width: 75%
+            letter-spacing: 1.1px
+            text-shadow: 0 0 1px rgba(255, 8, 160, 1)
+            &::placeholder
+                text-shadow: none;
+                color: black
+        button
+            padding: 3px 20px
+            outline: none
+            text-transform: uppercase
+            font-size: 14px
+            letter-spacing: 1.3px
+            font-family: 'Oswald', sans-serif
+            cursor: pointer
+            border: none
+            box-shadow: 0 0 2px 2px white
+            transition: .1s linear
+            &:hover
+                background-color: black
+                box-shadow: 0 0 2px 2px black
+                color: white
+    nav.task-list
+        flex-grow: 1
+        position: relative
+        margin-top: 25px
+        background-color: rgba(255,255,255, 0.2)
+        border-radius: 0 0 15px 15px
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-bottom: 20px
+      
+        .trash
+            +buttonsProperties
+            right: 10px
+        .changelog
+            +buttonsProperties
+            left: 10px
+        h3
+            font-family: 'Caveat', cursive
+            font-size: 25px
+            margin-top: 5px
+            letter-spacing: 1.2px
+            text-shadow: 0 0 1px white
+        ul
+            list-style-type: none
+            margin-top: 20px
+            width: 100%
+            li
+                font-family: 'Caveat', cursive
+                background-color: rgba(255, 8, 160, 0.3)
+                width: 75%
+                min-height: 30px
+                font-size: 22px
+                border-radius: 10px
+                margin: 0 auto
+                margin-bottom: 10px
+                padding: 5px 10px 5px 20px
+                color: white
+                text-shadow: 0 0 3px black
+                display: flex
+                letter-spacing: 1.1px
+                justify-content: space-between
+                align-items: center
+                @media screen and (max-width: 750px)
+                    width: 95%
+                    font-size: 20px
+                .tools
+                    display: flex
+                    margin-left: 1px
+                .tools i
+                    margin-left: 8px
+                    font-size: 22px
+                    color: blue
+                    cursor: pointer
+                    transition: .1s 
+                    &:nth-of-type(1)
+                        color: red
+                        font-size: 21px 
+                    &:hover
+                         transform: scale(1.2)
+.modal
+    position: fixed
+    display: none
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    background-color: rgba(0,0,0,0.5)                      
+.remove-approval 
+    position: fixed
+    top: 50px
+    left: 50%
+    width: 45vw
+    height: 140px
+    transform: translate(-50%, 0)
+    background-color: #fff;
+    box-shadow: 0 0 2px 2px white
+    border: 1px solid black
+    border-radius: 10px 
+    display: none
+    flex-direction: column
+    justify-content: space-evenly
+    align-items: center
+    text-align: center
+    z-index: 200
+    color: black;
+    @media screen and (max-width: 600px)
+      width: 90%       
+    &:hover
+        // transform: translate(-50%, 90%)
+    p
+        font-size: 22px              
+    button
+        font-family: 'Oswald', sans-serif
+        font-size: 18px
+        padding: 5px 10px
+        letter-spacing: 1.1px
+        border-radius: 5px
+        border: none
+        margin: 2px
+        box-shadow: 0 0 1px 1px blue
+        outline: none      
+        cursor: pointer 
+        &:hover
+            color: white
+            background-color: blue  
+        &:nth-of-type(2)
+            box-shadow: 0 0 1px 1px red
+            &:hover
+                color: white
+                background-color: red
+#edit-task
+    position: absolute
+    top: 16vh
+    left: 50%
+    width: 40vw
+    height: 300px
+    display: none
+    z-index: 200
+    flex-direction: column
+    justify-content: space-evenly
+    align-items: center
+    background-color: rgba(255,255,255,1)
+    border-radius: 12px
+    transform: translateX(-50%)
+    box-shadow: 0 0 2px 2px white
+    @media screen and (max-width:600px)
+        width: 90%
+    header
+        background-color: rgba(255, 8, 160, 0.3)
+        text-align: center
+        padding: 15px 0
+        width: 95%
+        border-radius: 10px
+        button
+            +exitButtonProps
+        h2
+            font-family: 'Caveat', cursive
+            letter-spacing: 1.2px
+            font-size: 36px
+    p
+        font-style: italic
+    input
+        font-family: 'Caveat', cursive;
+        padding: 2px 8px
+        outline: none
+        font-size: 24px
+        border: none
+        border-top: 3px solid rgba(255, 8, 160, 0.3)
+        border-bottom: 3px solid rgba(255, 8, 160, 0.3)
+        border-radius: 12px
+        text-align: center
+        width: 75%
+        letter-spacing: 1.1px
+        &::placeholder
+            color: black
+    .change-task-approval
+        padding: 10px
+        outline: none
+        border: 2px solid transparent
+        border-bottom: 2px solid rgba(255, 8, 160, 0.3)
+        letter-spacing: 1.2px
+        cursor: pointer
+        transition: border .1s linear, background-color .3s .4s linear, border-radius .3s .6s linear, transform .2s linear
+        &:hover
+            border-color: rgba(255, 8, 160, 0.3)
+            background-color: rgba(255, 8, 160, 0.3)
+            border-radius: 12px
+            transform: scale(1.2)
+#no-tasks-message
+    position: fixed
+    top: 51vh
+    left: 50vw
+    display: none
+    transform: translateX(-50%)
+    font-size: 20px
+    color: red
+    padding: 5px 10px
+    overflow: hidden
+    p
+        transform: translateX(calc(-100% - 10px))
+        transition: .7s ease-in
+    &:hover p
+        transform: translateX(0)
+
+#changelog-page
+    position: fixed;
+    top: 20vh
+    left: 50%
+    display: none
+    flex-direction: column
+    align-items: center
+    transform: translateX(-50%)
+    min-width: 60vw
+    min-height: 50vh
+    background-color: #fff
+    border-radius: 15px
+    box-shadow: 0 0 2px 2px white
+    z-index: 200
+    @media screen and (max-width: 600px)
+        width: 90%
+    button
+        +exitButtonProps
+    h3
+        background-color: rgba(255, 8, 160, 0.3)
+        text-align: center
+        font-family: 'Caveat', cursive
+        padding: 17px 0
+        width: 95%
+        font-size: 36px
+        letter-spacing: 1.3px
+        border-radius: 10px
+        margin: 15px 0 10px 0
+    .task-changes
+        position: relative
+        font-family: 'Quicksand', sans-serif;
+        flex-grow: 0.95
+        padding: 10px
+        border: 2px solid black
+        margin-bottom: 5px
+        min-width: 95%
+        border-radius: 25px
+        .loading-message
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 400px
+            transform: translate(-50%, -50%)
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            padding: 10px
+            circle
+                transform-origin: center;
+            p
+                line-height: 30px
+                font-size: 18px
+                margin-left: 5px
+                width: 81%
+                text-align: left
+        .loading-data-list
+            list-style-type: none
+            display: flex
+            flex-direction: column
+            justify-content: flex-start 
+            padding: 0 10px
+            li
+                margin: 5px 0
+                background-color: rgba(255, 8, 160, 0.2)
+                padding: 2px 20px
+                border-radius: 8px
+                #first-task
+                    color: blue
+                    font-style: italic
+                #second-task
+                    color: orangered
+                .third-task
+                    color: #c70303
+                    letter-spacing: 1.1px
+
+.stats-info
+    position: absolute
+    top: 50px
+    left: 50px
+    font-family: 'Caveat', cursive
+    font-size: 24px
+    color: rgba(255,255,255,0.8)
+    background-color: rgba(255,255,255, 0.1)
+    padding: 25px
+    border-radius: 15px
+    @media screen and (max-width:750px)
+        top: 80px
+        left: 50%
+        transform: translateX(-50%)
+        width: 80%
+    @media screen and ( min-width: 750px  )
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+        width: 85%
+        padding: 5px
+        top: 70px
+        
+    h3
+        font-size: 1.5em
+        letter-spacing: 1.2px
+        margin-bottom: 8px
+    p
+        margin-top: 5px
+        span
+            font-weight: bold
+            margin-left: 2px
+
+        
