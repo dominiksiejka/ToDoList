@@ -4,7 +4,7 @@
 
 [**click live demo of the project**](https://dominiksiejka.github.io/ToDoListApp)
 
-![CounterApp preview](./assets/CounterApp.jpg)
+![CounterApp preview](./assets/todolist.jpg)
 
 ## Table of Contents
 
