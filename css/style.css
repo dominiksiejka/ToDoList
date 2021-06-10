@@ -1,0 +1,708 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Oswald:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: radial-gradient(circle, #eeaeca 1%, #2768c6 92%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main.container {
+  margin-top: 100px;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  min-height: 55vh;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (max-width: 750px) {
+  main.container {
+    -ms-flex-preferred-size: 90%;
+        flex-basis: 90%;
+    margin-top: 300px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  main.container {
+    margin-top: 150px;
+  }
+}
+
+main.container #change-engine {
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  font-size: 20px;
+  padding: 3px 20px;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1.3px;
+  cursor: pointer;
+  border: none;
+  -webkit-box-shadow: 0 0 2px 2px white;
+          box-shadow: 0 0 2px 2px white;
+}
+
+main.container #change-engine:hover {
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  -webkit-box-shadow: 0 0 2px 2px black;
+          box-shadow: 0 0 2px 2px black;
+}
+
+main.container .add-task-engine, main.container .search-engine {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: 15px 15px 0 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 170px;
+      flex-basis: 170px;
+}
+
+main.container .add-task-engine h1, main.container .search-engine h1 {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1.3px;
+  font-size: 38px;
+}
+
+main.container .add-task-engine input, main.container .search-engine input {
+  font-family: 'Caveat', cursive;
+  padding: 2px 8px;
+  outline: none;
+  font-size: 24px;
+  border: none;
+  border-top: 2px solid darkred;
+  border-bottom: 2px solid darkred;
+  border-radius: 12px;
+  text-align: center;
+  width: 75%;
+  letter-spacing: 1.1px;
+  text-shadow: 0 0 1px #ff08a0;
+}
+
+main.container .add-task-engine input::-webkit-input-placeholder, main.container .search-engine input::-webkit-input-placeholder {
+  text-shadow: none;
+  color: black;
+}
+
+main.container .add-task-engine input:-ms-input-placeholder, main.container .search-engine input:-ms-input-placeholder {
+  text-shadow: none;
+  color: black;
+}
+
+main.container .add-task-engine input::-ms-input-placeholder, main.container .search-engine input::-ms-input-placeholder {
+  text-shadow: none;
+  color: black;
+}
+
+main.container .add-task-engine input::placeholder, main.container .search-engine input::placeholder {
+  text-shadow: none;
+  color: black;
+}
+
+main.container .add-task-engine button, main.container .search-engine button {
+  padding: 3px 20px;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.3px;
+  font-family: 'Oswald', sans-serif;
+  cursor: pointer;
+  border: none;
+  -webkit-box-shadow: 0 0 2px 2px white;
+          box-shadow: 0 0 2px 2px white;
+  -webkit-transition: .1s linear;
+  transition: .1s linear;
+}
+
+main.container .add-task-engine button:hover, main.container .search-engine button:hover {
+  background-color: black;
+  -webkit-box-shadow: 0 0 2px 2px black;
+          box-shadow: 0 0 2px 2px black;
+  color: white;
+}
+
+main.container nav.task-list {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  position: relative;
+  margin-top: 25px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 15px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+main.container nav.task-list .trash {
+  position: absolute;
+  top: 7px;
+  padding: 3px 8px;
+  font-size: 22px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  right: 10px;
+}
+
+main.container nav.task-list .trash:hover {
+  color: white;
+}
+
+main.container nav.task-list .changelog {
+  position: absolute;
+  top: 7px;
+  padding: 3px 8px;
+  font-size: 22px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  left: 10px;
+}
+
+main.container nav.task-list .changelog:hover {
+  color: white;
+}
+
+main.container nav.task-list h3 {
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+  margin-top: 5px;
+  letter-spacing: 1.2px;
+  text-shadow: 0 0 1px white;
+}
+
+main.container nav.task-list ul {
+  list-style-type: none;
+  margin-top: 20px;
+  width: 100%;
+}
+
+main.container nav.task-list ul li {
+  font-family: 'Caveat', cursive;
+  background-color: rgba(255, 8, 160, 0.3);
+  width: 75%;
+  min-height: 30px;
+  font-size: 22px;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 5px 10px 5px 20px;
+  color: white;
+  text-shadow: 0 0 3px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  letter-spacing: 1.1px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+  main.container nav.task-list ul li {
+    width: 95%;
+    font-size: 20px;
+  }
+}
+
+main.container nav.task-list ul li .tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 1px;
+}
+
+main.container nav.task-list ul li .tools i {
+  margin-left: 8px;
+  font-size: 22px;
+  color: blue;
+  cursor: pointer;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+main.container nav.task-list ul li .tools i:nth-of-type(1) {
+  color: red;
+  font-size: 21px;
+}
+
+main.container nav.task-list ul li .tools i:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.remove-approval {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  width: 45vw;
+  height: 140px;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 2px 2px white;
+          box-shadow: 0 0 2px 2px white;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  z-index: 200;
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .remove-approval {
+    width: 90%;
+  }
+}
+
+.remove-approval p {
+  font-size: 22px;
+}
+
+.remove-approval button {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  padding: 5px 10px;
+  letter-spacing: 1.1px;
+  border-radius: 5px;
+  border: none;
+  margin: 2px;
+  -webkit-box-shadow: 0 0 1px 1px blue;
+          box-shadow: 0 0 1px 1px blue;
+  outline: none;
+  cursor: pointer;
+}
+
+.remove-approval button:hover {
+  color: white;
+  background-color: blue;
+}
+
+.remove-approval button:nth-of-type(2) {
+  -webkit-box-shadow: 0 0 1px 1px red;
+          box-shadow: 0 0 1px 1px red;
+}
+
+.remove-approval button:nth-of-type(2):hover {
+  color: white;
+  background-color: red;
+}
+
+#edit-task {
+  position: absolute;
+  top: 16vh;
+  left: 50%;
+  width: 40vw;
+  height: 300px;
+  display: none;
+  z-index: 200;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border-radius: 12px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-box-shadow: 0 0 2px 2px white;
+          box-shadow: 0 0 2px 2px white;
+}
+
+@media screen and (max-width: 600px) {
+  #edit-task {
+    width: 90%;
+  }
+}
+
+#edit-task header {
+  background-color: rgba(255, 8, 160, 0.3);
+  text-align: center;
+  padding: 15px 0;
+  width: 95%;
+  border-radius: 10px;
+}
+
+#edit-task header button {
+  position: absolute;
+  top: calc(-30px / 2.5);
+  right: calc(-30px / 2.5);
+  font-size: 24px;
+  line-height: 30px;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 1px 4px white;
+          box-shadow: 0 0 1px 4px white;
+  height: 30px;
+  outline: none;
+  border-radius: 25px;
+  background-color: #f0a6e0;
+}
+
+#edit-task header button:hover {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+#edit-task header h2 {
+  font-family: 'Caveat', cursive;
+  letter-spacing: 1.2px;
+  font-size: 36px;
+}
+
+#edit-task p {
+  font-style: italic;
+}
+
+#edit-task input {
+  font-family: 'Caveat', cursive;
+  padding: 2px 8px;
+  outline: none;
+  font-size: 24px;
+  border: none;
+  border-top: 3px solid rgba(255, 8, 160, 0.3);
+  border-bottom: 3px solid rgba(255, 8, 160, 0.3);
+  border-radius: 12px;
+  text-align: center;
+  width: 75%;
+  letter-spacing: 1.1px;
+}
+
+#edit-task input::-webkit-input-placeholder {
+  color: black;
+}
+
+#edit-task input:-ms-input-placeholder {
+  color: black;
+}
+
+#edit-task input::-ms-input-placeholder {
+  color: black;
+}
+
+#edit-task input::placeholder {
+  color: black;
+}
+
+#edit-task .change-task-approval {
+  padding: 10px;
+  outline: none;
+  border: 2px solid transparent;
+  border-bottom: 2px solid rgba(255, 8, 160, 0.3);
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  -webkit-transition: border .1s linear, background-color .3s .4s linear, border-radius .3s .6s linear, -webkit-transform .2s linear;
+  transition: border .1s linear, background-color .3s .4s linear, border-radius .3s .6s linear, -webkit-transform .2s linear;
+  transition: border .1s linear, background-color .3s .4s linear, border-radius .3s .6s linear, transform .2s linear;
+  transition: border .1s linear, background-color .3s .4s linear, border-radius .3s .6s linear, transform .2s linear, -webkit-transform .2s linear;
+}
+
+#edit-task .change-task-approval:hover {
+  border-color: rgba(255, 8, 160, 0.3);
+  background-color: rgba(255, 8, 160, 0.3);
+  border-radius: 12px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#no-tasks-message {
+  position: fixed;
+  top: 51vh;
+  left: 50vw;
+  display: none;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 20px;
+  color: red;
+  padding: 5px 10px;
+  overflow: hidden;
+}
+
+#no-tasks-message p {
+  -webkit-transform: translateX(calc(-100% - 10px));
+          transform: translateX(calc(-100% - 10px));
+  -webkit-transition: .7s ease-in;
+  transition: .7s ease-in;
+}
+
+#no-tasks-message:hover p {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+#changelog-page {
+  position: fixed;
+  top: 20vh;
+  left: 50%;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  min-width: 60vw;
+  min-height: 50vh;
+  background-color: #fff;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 2px 2px white;
+          box-shadow: 0 0 2px 2px white;
+  z-index: 200;
+}
+
+@media screen and (max-width: 600px) {
+  #changelog-page {
+    width: 90%;
+  }
+}
+
+#changelog-page button {
+  position: absolute;
+  top: calc(-30px / 2.5);
+  right: calc(-30px / 2.5);
+  font-size: 24px;
+  line-height: 30px;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 1px 4px white;
+          box-shadow: 0 0 1px 4px white;
+  height: 30px;
+  outline: none;
+  border-radius: 25px;
+  background-color: #f0a6e0;
+}
+
+#changelog-page button:hover {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+#changelog-page h3 {
+  background-color: rgba(255, 8, 160, 0.3);
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  padding: 17px 0;
+  width: 95%;
+  font-size: 36px;
+  letter-spacing: 1.3px;
+  border-radius: 10px;
+  margin: 15px 0 10px 0;
+}
+
+#changelog-page .task-changes {
+  position: relative;
+  font-family: 'Quicksand', sans-serif;
+  -webkit-box-flex: 0.95;
+      -ms-flex-positive: 0.95;
+          flex-grow: 0.95;
+  padding: 10px;
+  border: 2px solid black;
+  margin-bottom: 5px;
+  min-width: 95%;
+  border-radius: 25px;
+}
+
+#changelog-page .task-changes .loading-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+}
+
+#changelog-page .task-changes .loading-message circle {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+#changelog-page .task-changes .loading-message p {
+  line-height: 30px;
+  font-size: 18px;
+  margin-left: 5px;
+  width: 81%;
+  text-align: left;
+}
+
+#changelog-page .task-changes .loading-data-list {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0 10px;
+}
+
+#changelog-page .task-changes .loading-data-list li {
+  margin: 5px 0;
+  background-color: rgba(255, 8, 160, 0.2);
+  padding: 2px 20px;
+  border-radius: 8px;
+}
+
+#changelog-page .task-changes .loading-data-list li #first-task {
+  color: blue;
+  font-style: italic;
+}
+
+#changelog-page .task-changes .loading-data-list li #second-task {
+  color: orangered;
+}
+
+#changelog-page .task-changes .loading-data-list li .third-task {
+  color: #c70303;
+  letter-spacing: 1.1px;
+}
+
+.stats-info {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 750px) {
+  .stats-info {
+    top: 80px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .stats-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 85%;
+    padding: 5px;
+    top: 70px;
+  }
+}
+
+.stats-info h3 {
+  font-size: 1.5em;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+}
+
+.stats-info p {
+  margin-top: 5px;
+}
+
+.stats-info p span {
+  font-weight: bold;
+  margin-left: 2px;
+}
